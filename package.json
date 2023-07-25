@@ -4,7 +4,8 @@
   "description": "This is a workshop about cypress",
   "main": "index.js",
   "scripts": {
-    "test": "cypress open"
+    "test": "cypress open",
+    "test:open": "cypress open"
   },
   "keywords": [
     "ui-testing",
@@ -13,5 +14,8 @@
     "cypress"
   ],
   "author": "[Jose Manuel Orjuela] <jose.orjuela@perficient.com> ([https://github.com/manimotion/])",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "cypress": "^12.17.2"
+  }
 }
