@@ -2,7 +2,6 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
-    // solo necesitas agregar estas dos propiedades, no incluir este comentario
     video: false,
     screenshotOnRunFailure: false,
     chromeWebSecurity: false,
