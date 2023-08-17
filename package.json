@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test:open": "npm run lint && cypress open",
+    "test": "cypress run --headless --browser chrome",
     "lint": "eslint ./cypress/e2e/**/*.ts",
     "lint:fix": "npm run lint -- --fix"
-},
+  },
   "keywords": [
     "ui-testing",
     "dojo",
