@@ -1,4 +1,5 @@
-import { ItemPage, LoginPage, ProductsPage, ShoppingCartPage, InformationPage, OverviewPage, CheckoutPage } from "../pages/index";
+import { ItemPage, LoginPage, ProductsPage, ShoppingCartPage, 
+    InformationPage, OverviewPage, CheckoutPage } from "../pages/index";
 
 const loginPage = new LoginPage();
 const productsPage = new ProductsPage()
