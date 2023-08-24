@@ -11,4 +11,3 @@ class ProductsPage {
     }
 
   export { ProductsPage };
-  
