@@ -13,7 +13,7 @@ describe("Buy a black t-shirt", () => {
     it("then the t-shirt should be bought", () => {
         loginPage.visitLoginPage();
         loginPage.signIn("standard_user","secret_sauce");
-        productsPage.selectProduct('Sauce Labs Bolt T-Shirt');
+        productsPage.selectProduct("Sauce Labs Bolt T-Shirt");
         itemPage.addToCart();
         itemPage.goToCart();
         shoppingCartPage.proceedToCheckout();
