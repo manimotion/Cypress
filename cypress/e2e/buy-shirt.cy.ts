@@ -11,8 +11,10 @@ const checkoutPage = new CheckoutPage()
 
 describe("Buy a black t-shirt", () => {
     it("then the t-shirt should be bought", () => {
+        //Arrange
         loginPage.visitLoginPage();
         loginPage.signIn("standard_user","secret_sauce");
+        //Act
         productsPage.selectProduct("Sauce Labs Bolt T-Shirt");
         itemPage.addToCart();
         itemPage.goToCart();
@@ -20,6 +22,7 @@ describe("Buy a black t-shirt", () => {
         informationPage.setUserInfo("cypress","Workshop","00000")
         informationPage.proceedToPayment();
         overviewPage.finishPayment();
+        //Assert
         checkoutPage.confirmSuccessfulCheckout("Thank you for your order!");
     });
 });
