@@ -1,7 +1,5 @@
 import { ItemPage, LoginPage, ProductsPage, ShoppingCartPage, 
     InformationPage, OverviewPage, CheckoutPage } from "../pages/index";
-
-describe("Buy a black t-shirt", () => {
     
     let loginPage: LoginPage;
     let productsPage: ProductsPage;
@@ -11,6 +9,8 @@ describe("Buy a black t-shirt", () => {
     let overviewPage: OverviewPage;
     let checkoutPage: CheckoutPage;
 
+
+describe("Buy a black t-shirt", () => {
     beforeEach(() => {
         loginPage = new LoginPage();
         productsPage = new ProductsPage()
