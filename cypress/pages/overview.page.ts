@@ -5,7 +5,7 @@ class OverviewPage {
         this.finishButton="#finish";
     }
 
-    public clickOnFinishButton() {
+    public finishPayment() {
         cy.get(this.finishButton).click();
     }
 }

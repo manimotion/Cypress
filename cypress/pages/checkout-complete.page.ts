@@ -5,7 +5,7 @@ class CheckoutPage {
         this.header=".complete-header";
     }
 
-    public isValidHeader(text: string){
+    public confirmSuccessfulCheckout(text: string){
         cy.get(this.header).invoke('text').should(
             "eq",text)
     }

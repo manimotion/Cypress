@@ -5,7 +5,7 @@ class ShoppingCartPage {
       this.button = "#checkout";
     }
 
-    public clickOnCheckoutButton() {
+    public proceedToCheckout() {
         cy.get(this.button).click();
         }
     }

@@ -11,6 +11,12 @@ class InformationPage {
         this.continueButton='#continue'
     }
 
+    public setUserInfo(name: string, lastname: string, zip: string){
+        this.setFirstName(name)
+        this.setLastName(lastname)
+        this.setZip(zip)
+    }
+
     public setFirstName(name: string) {
         cy.get(this.name).type(name);
 
@@ -23,7 +29,7 @@ class InformationPage {
         cy.get(this.zip).type(zip);
     }
 
-    public clickOnContinueButton(){
+    public proceedToPayment(){
         cy.get(this.continueButton).click();
     }
 

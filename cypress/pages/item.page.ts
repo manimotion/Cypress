@@ -7,11 +7,11 @@ class ItemPage {
       this.cartButton = "#shopping_cart_container";
     }
 
-    public clickOnAddToCartButton() {
+    public addToCart() {
         cy.get(this.button).click();
         }
 
-    public clickOnCartButton() {
+    public goToCart() {
         cy.get(this.cartButton).click();
         }    
     }

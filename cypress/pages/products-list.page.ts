@@ -5,8 +5,8 @@ class ProductsPage {
       this.header = ".app_logo";
     }
 
-    public clickOnItem(index: number) {
-        cy.get('.inventory_item_name').eq(index).click();
+    public selectProduct(productName: string) {
+        cy.get('.inventory_item_name').contains(productName).click();
         }
     }
 

@@ -13,15 +13,13 @@ describe("Buy a black t-shirt", () => {
     it("then the t-shirt should be bought", () => {
         loginPage.visitLoginPage();
         loginPage.signIn("standard_user","secret_sauce");
-        productsPage.clickOnItem(2);
-        itemPage.clickOnAddToCartButton();
-        itemPage.clickOnCartButton();
-        shoppingCartPage.clickOnCheckoutButton();
-        informationPage.setFirstName("cypress");
-        informationPage.setLastName("Workshop");
-        informationPage.setZip("00000");
-        informationPage.clickOnContinueButton();
-        overviewPage.clickOnFinishButton();
-        checkoutPage.isValidHeader("Thank you for your order!");
+        productsPage.selectProduct('Sauce Labs Bolt T-Shirt');
+        itemPage.addToCart();
+        itemPage.goToCart();
+        shoppingCartPage.proceedToCheckout();
+        informationPage.setUserInfo("cypress","Workshop","00000")
+        informationPage.proceedToPayment();
+        overviewPage.finishPayment();
+        checkoutPage.confirmSuccessfulCheckout("Thank you for your order!");
     });
 });
