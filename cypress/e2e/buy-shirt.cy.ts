@@ -1,21 +1,25 @@
+import { ItemPage, LoginPage, ProductsPage, ShoppingCartPage, 
+    InformationPage, OverviewPage, CheckoutPage } from "../pages/index";
+
+const loginPage = new LoginPage();
+const productsPage = new ProductsPage()
+const itemPage = new ItemPage()
+const shoppingCartPage = new ShoppingCartPage();
+const informationPage = new InformationPage();
+const overviewPage = new OverviewPage();
+const checkoutPage = new CheckoutPage()
+
 describe("Buy a black t-shirt", () => {
     it("then the t-shirt should be bought", () => {
-        cy.visit("https://www.saucedemo.com/");
-        cy.get(".login-box > form > div > input#user-name").type("standard_user");
-        cy.get(".login-box > form > div > input#password").type("secret_sauce");
-        cy.get("input[type='submit']").click();
-        cy.get("#item_1_title_link").click();
-        cy.get("#add-to-cart-sauce-labs-bolt-t-shirt").click();
-        cy.get("#shopping_cart_container").click();
-        cy.get("#checkout").click();
-        cy.get("#first-name").type("Cypress");
-        cy.get("#last-name").type("Workshop");
-        cy.get("#postal-code").type("00000");
-        cy.get("#continue").click();
-        cy.get("#finish").click();
-        cy.get("#contents_wrapper > .checkout_complete_container > h2").should(
-            "have.text",
-            "Thank you for your order!"
-       ); //(12)
+        loginPage.visitLoginPage();
+        loginPage.signIn("standard_user","secret_sauce");
+        productsPage.selectProduct("Sauce Labs Bolt T-Shirt");
+        itemPage.addToCart();
+        itemPage.goToCart();
+        shoppingCartPage.proceedToCheckout();
+        informationPage.setUserInfo("cypress","Workshop","00000")
+        informationPage.proceedToPayment();
+        overviewPage.finishPayment();
+        checkoutPage.confirmSuccessfulCheckout("Thank you for your order!");
     });
 });
